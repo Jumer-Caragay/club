@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import logo from '../assets/logo.png';
 import animatedTeam from '../assets/team.gif';
+import ContactForm from '../components/ContactForm';
 
 /* eslint-disable react/prop-types, max-len */
 const IndexPage = () => (
@@ -36,38 +37,41 @@ const IndexPage = () => (
       />
     </header>
     <div className={styles.window} />
-    <div className={styles.gutter}>
-      <section className={styles.events}>
-        <h2>Our Events</h2>
-        <h3>2017 - 2018</h3>
-        <div className={styles.event}>
-          <div>
-            <h4>Local Hack Day</h4>
-          </div>
-          <div>
-            <h4>SLO Hacks</h4>
-          </div>
-          <div>
-            <h4>Firecode</h4>
-          </div>
+    <div className={styles.gutter} />
+    <section className={styles.events}>
+      <h2>Our Events</h2>
+      <h3>2017 - 2018</h3>
+      <div className={styles.event}>
+        <div>
+          <h4>Local Hack Day</h4>
         </div>
-        <h3>2018 - 2019</h3>
-        <p>Stay tuned!</p>
-      </section>
-      <section className={styles.partners}>
-        <h2 className={styles.h2}>
-          Our Partners
-        </h2>
-        <p className={styles.p}>
-          We&apos;re honored to be partnered with some awesome organizations and companies.
-        </p>
-      </section>
-      <section className={styles.contact}>
-        <h2>Contact Us</h2>
-        <p>Have questions, feedback, or concerns? Shoot us an email at <a href="mailto:team@slohacks.com">team@slohacks.com!</a></p>
-      </section>
-    </div>
+        <div>
+          <h4>SLO Hacks</h4>
+        </div>
+        <div>
+          <h4>Firecode</h4>
+        </div>
+      </div>
+      <h3>2018 - 2019</h3>
+      <p>Stay tuned!</p>
+    </section>
+    <section className={styles.partners}>
+      <h2 className={styles.h2}>
+        Our Partners
+      </h2>
+      <p className={styles.p}>
+        We&apos;re honored to be partnered with some awesome organizations and companies.
+      </p>
+    </section>
+    <section className={styles.contact}>
+      <h2>Contact Us</h2>
+      <p>Have questions, feedback, or concerns? Shoot us an email at <a href="mailto:team@slohacks.com">team@slohacks.com!</a></p>
+    </section>
+    <section className={styles.subscribe}>
+      <h2>Subscribe</h2>
+      <p>Interested in attending a future SLO Hacks event? Subscribe to our mailing list!</p>
+      <ContactForm />
+    </section>
   </div>
 );
-
 export default IndexPage;

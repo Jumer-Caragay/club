@@ -69,9 +69,10 @@
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: min-content min-content min-content;
   grid-template-areas:
-    ' . events   . '
-    ' . partners . '
-    ' . contact  . ';
+    '. events    .'
+    '. partners  .'
+    '. contact   .'
+    '. subscribe .';
   padding: 6% 0% 3%;
 }
 
@@ -80,9 +81,10 @@
     grid-template-columns: 9.58% 80.84% 9.58%;
     grid-template-rows: min-content min-content min-content;
     grid-template-areas:
-      '. events   .'
-      '. partners .'
-      '. contact  .';
+      '. events    .'
+      '. partners  .'
+      '. contact   .'
+      '. subscribe .';
   }
 }
 
@@ -96,6 +98,10 @@
 
 .contact {
   grid-area: contact;
+}
+
+.subscribe {
+  grid-area: subscribe;
 }
 
 .h1 {
