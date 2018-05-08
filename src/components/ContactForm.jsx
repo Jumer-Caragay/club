@@ -1,39 +1,17 @@
 import React from 'react';
-import Recaptcha from 'react-google-invisible-recaptcha';
 import styles from './ContactForm.module.css';
 import Button from './Button';
 
-
 class ContactForm extends React.Component {
   static validateEmail(email) {
-    const at = email.indexOf('@');
-    const dot = email.lastIndexOf('.');
-    return email.length > 0 &&
-             at > 0 &&
-             dot > at + 1 &&
-             dot < email.length &&
-             email[at + 1] !== '.' &&
-             email.indexOf(' ') === -1 &&
-             email.indexOf('..') === -1;
+    const re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return re.test(String(email).toLowerCase());
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { email: '' };
     this.emailChange = this.emailChange.bind(this);
-    this.checkFormSubmission = this.checkFormSubmission.bind(this);
-  }
-
-  onResolved() {
-    console.log(this.recaptcha.getResponse());
-  }
-
-  checkFormSubmission(event) {
-    if (!this.canSubmit()) {
-      event.preventDefault();
-    } else {
-      this.recaptcha.execute();
-    }
   }
 
   emailChange(event) {
@@ -49,22 +27,25 @@ class ContactForm extends React.Component {
     const errorCheck = this.canSubmit();
     return (
       <div>
-        <form onSubmit={this.checkFormSubmission}>
+        <form
+          action="https://slohacks.us16.list-manage.com/subscribe/post?u=515a0d803b1aaaa867cc60566&amp;id=5b44869e63"
+          method="post"
+          name="mc-embedded-subscribe-form"
+          target="_blank"
+        >
           <p>
             <input
               className={errorCheck ? null : styles.Error}
-              type="text"
+              type="email"
               value={this.state.email}
               onChange={this.emailChange}
               placeholder="Email Address"
+              name="EMAIL"
             />
           </p>
-          <Button name="Submit" disabled={!errorCheck} />
-          <Recaptcha
-            ref={(arg) => { this.recaptcha = arg; }}
-            sitekey="6Lc0a1cUAAAAAIR_1Npm8y81RsAAgJNStGjX-wBR"
-            size="invisible"
-            onResolved={this.onResolved}
+          <Button
+            name="Subscribe"
+            disabled={!errorCheck}
           />
         </form>
       </div>

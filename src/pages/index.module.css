@@ -19,11 +19,11 @@
     grid-template-columns: 9.58% 9.84% 20.99% 2.55% 47.45% 9.58%;
     grid-template-rows: 12.9% 12% 6.5% 55% 12.9%;
     grid-template-areas:
-      '. .    .    . .    .'
-      '. logo .    . .    .'
-      '. .    .    . .    .'
-      '. team team . text .'
-      '. .    .    . .    .';
+      '. .    .    . .      .'
+      '. logo .    . navbar .'
+      '. .    .    . .      .'
+      '. team team . text   .'
+      '. .    .    . .      .';
   }
 }
 
@@ -100,6 +100,58 @@
   grid-area: contact;
 }
 
+.partnerImages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0% 0% 3%;
+}
+
+.partnerImages a {
+  padding: 0 1em;
+}
+
+@media all and (min-width: 839px) {
+  .partnerImages {
+    flex-direction: row;
+  }
+}
+
+.oldLink {
+  height: auto;
+  width: 85%
+}
+
+@media all and (min-width: 839px) {
+  .oldLink {
+    height: 12vh;
+    width: auto;
+  }
+}
+
+.oldSlo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.brandLink {
+  height: auto;
+  width: 90%;
+}
+
+@media all and (min-width: 839px) {
+  .brandLink {
+    height: 8vh;
+    width: auto;
+  }
+}
+
+.brandmakers {
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .subscribe {
   grid-area: subscribe;
 }
@@ -110,7 +162,44 @@
 
 .event {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+}
+
+@media all and (min-width: 839px) {
+  .event {
+    flex-direction: row;
+  }
+}
+
+.image_container {
+  position: relative;
+  text-align: center;
+}
+
+.images {
+  width: 90%;
+  border-radius: 1.5em;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+@media all and (min-width: 839px) {
+  .images {
+    width: 80%
+  }
+}
+
+.images:hover {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.event_name {
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .column {
